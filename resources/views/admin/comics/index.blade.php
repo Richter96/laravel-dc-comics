@@ -52,7 +52,6 @@
                                     data-bs-target="#modal-{{ $comic->id }}">
                                     DELETE
                                 </button>
-
                                 <!-- Modal Body -->
                                 <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
                                 <div class="modal fade" id="modal-{{ $comic->id }}" tabindex="-1"
