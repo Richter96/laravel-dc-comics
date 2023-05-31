@@ -20,6 +20,7 @@
     @include('partials.header')
 
     <main>
+        @include('partials.jambotron')
         @yield('content')
     </main>
 
