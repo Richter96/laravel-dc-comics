@@ -1,11 +1,12 @@
 @use '/resources/scss/partials/variables' as *;
 @import '~bootstrap/scss/bootstrap';
 
+
 body {
 
     .jambotron {
         width: 100%;
-        max-height: 500px;
+        max-height: 300px;
         overflow: hidden;
         img {
             object-fit: cover;
@@ -13,7 +14,7 @@ body {
         }
     }
     
-    #app_main {
+    .container-comic {
         background-color: #1c1c1c!important;
         
         
