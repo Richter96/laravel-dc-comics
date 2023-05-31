@@ -14,6 +14,9 @@ class PageController extends Controller
     public function comic()
     {
         $comics = Comic::all();
+
+        // $comics = config('comics');  sbagliato
+
         // dd($comics);
         return view('comics', compact('comics'));
     }
