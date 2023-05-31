@@ -10,4 +10,8 @@ class PageController extends Controller
     {
         return view('home');
     }
+    public function comic()
+    {
+        return view('comics');
+    }
 }
