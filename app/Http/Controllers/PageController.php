@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comic;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -12,6 +13,8 @@ class PageController extends Controller
     }
     public function comic()
     {
-        return view('comics');
+        $comics = Comic::all();
+        // dd($comics);
+        return view('comics', compact('comics'));
     }
 }
