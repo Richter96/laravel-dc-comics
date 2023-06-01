@@ -41,6 +41,16 @@ class ComicController extends Controller
      */
     public function store(StoreComicRequest $request)
     {
+        $val_data = $request->validate([
+            'title' => 'required|min:5|max:100',
+            'type' => 'nullable|min:5|max:50',
+            'description' => 'nullable',
+            'thumb' => 'nullable|min:5',
+            'price' => 'required',
+            'sale_date' => 'nullable'
+        ]);
+        dd($val_data);
+
         // dd($request->all());
         $dataForm = [
             /* 'chiave database' => $request -> "name"(del form)  */
@@ -49,7 +59,7 @@ class ComicController extends Controller
             'description' => $request->description,
             'thumb' => $request->thumb,
             'sale_date' => $request->sale_date,
-            'price' => '$' . $request->price,
+            'price' => $request->price,
         ];
         // nel database comic crea una nuova riga con i dati.
         Comic::create($dataForm);
