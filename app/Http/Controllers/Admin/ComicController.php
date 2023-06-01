@@ -49,20 +49,20 @@ class ComicController extends Controller
             'price' => 'required|numeric',
             'sale_date' => 'nullable'
         ]);
-        dd($val_data);
+        // dd($val_data);
 
         // dd($request->all());
-        $dataForm = [
-            /* 'chiave database' => $request -> "name"(del form)  */
-            'title' => $request->title,
-            'type' => $request->type,
-            'description' => $request->description,
-            'thumb' => $request->thumb,
-            'sale_date' => $request->sale_date,
-            'price' => $request->price,
-        ];
+        // $dataForm = [
+        //     /* 'chiave database' => $request -> "name"(del form)  */
+        //     'title' => $request->title,
+        //     'type' => $request->type,
+        //     'description' => $request->description,
+        //     'thumb' => $request->thumb,
+        //     'sale_date' => $request->sale_date,
+        //     'price' => $request->price,
+        // ];
         // nel database comic crea una nuova riga con i dati.
-        Comic::create($dataForm);
+        Comic::create($val_data);
         // riindirizziaom verso la route principale
         return to_route('comics.index')->with('message', 'comics add successfully');
     }
@@ -98,17 +98,28 @@ class ComicController extends Controller
      */
     public function update(UpdateComicRequest $request, Comic $comic)
     {
-        $dataForm = [
-            /* 'chiave database' => $request -> "name"(del form)  */
-            'title' => $request->title,
-            'type' => $request->type,
-            'description' => $request->description,
-            'thumb' => $request->thumb,
-            'sale_date' => $request->sale_date,
-            'price' => '$' . $request->price,
-        ];
 
-        $comic->update($dataForm);
+        $val_data = $request->validate([
+            'title' => 'required|min:5|max:100',
+            'type' => 'nullable|min:5|max:50',
+            'description' => 'nullable',
+            'thumb' => 'required|nullable|min:5',
+            'price' => 'required|numeric',
+            'sale_date' => 'nullable'
+        ]);
+        //dd($val_data);
+
+        // $dataForm = [
+        //     /* 'chiave database' => $request -> "name"(del form)  */
+        //     'title' => $request->title,
+        //     'type' => $request->type,
+        //     'description' => $request->description,
+        //     'thumb' => $request->thumb,
+        //     'sale_date' => $request->sale_date,
+        //     'price' => '$' . $request->price,
+        // ];
+
+        $comic->update($val_data);
         return to_route('comics.index')->with('message', 'comics edit succesfull');
     }
 
