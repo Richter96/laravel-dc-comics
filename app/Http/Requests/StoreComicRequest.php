@@ -26,6 +26,8 @@ class StoreComicRequest extends FormRequest
             'type.max' => 'La lunghezza del Tipo deve essere minore di 50 caratteri',
             'thumb.min' => 'La lunghezza del link immagine deve essere maggiore di 5 caratteri',
             'thumb.required' => 'E` obbligatorio inserire un link per l`immagine',
+            'price.required' => 'E` obbligatorio inserire un prezzo',
+            'price.numeric' => 'Devi inserire nel campo prezzo un numero',
 
 
         ];
