@@ -53,13 +53,16 @@
             </div>
             <div class="social col d-flex align-items-center justify-content-end">
                 <span class="fw-bold">FOLLOW AS</span>
-                <img class="ps-3" src="Vite::asset('resources/img/footer-facebook')}}
-                "
-                    alt="">
-                <img class="ps-3" src="{{ Vite::asset('resources/img/footer-twitter.png') }}" alt="">
-                <img class="ps-3" src="{{ Vite::asset('resources/img/footer-youtube.png') }}" alt="">
-                <img class="ps-3" src="{{ Vite::asset('resources/img/footer-pinterest.png') }}" alt="">
-                <img class="ps-3" src="{{ Vite::asset('resources/img/footer-periscope.png') }}" alt="">
+                <a href=""><img class="ps-3" src="{{ Vite::asset('resources/img/footer-facebook.png') }}"
+                        alt=""></a>
+                <a href=""><img class="ps-3" src="{{ Vite::asset('resources/img/footer-twitter.png') }}"
+                        alt=""></a>
+                <a href=""><img class="ps-3" src="{{ Vite::asset('resources/img/footer-youtube.png') }}"
+                        alt=""></a>
+                <a href=""><img class="ps-3" src="{{ Vite::asset('resources/img/footer-pinterest.png') }}"
+                        alt=""></a>
+                <a href=""><img class="ps-3" src="{{ Vite::asset('resources/img/footer-periscope.png') }}"
+                        alt=""></a>
             </div>
         </div>
     </section>
