@@ -5,7 +5,8 @@ CREATE NEW COMICS
 @endsection
 
 @section('content')
-<div class="container">
+<a name="" id="" class="btn bg-violet-500 bg-warning btn-close-white" href="{{Route('comics.index')}}" role="button">INDIETRO</a>
+<div class="container-sm container-edit shadow my-5 ">
     @include('partials.validation_errors')
 
     {{-- si cambia la rotta rispetto al create xk dovra dirottare verso update, inseriamo anche id perche la funzione update sa tramite id quale elemento andare ad aggiornare --}}
@@ -16,7 +17,7 @@ CREATE NEW COMICS
         {{-- title --}}
         <div class="mb-3">
             <label for="title" class="form-label">TITOLO</label>
-            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title"" name=" title" id="title" aria-describedby="helpId" value="{{ (old('thumb', $comic->title)) }}">
+            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" name=" title" id="title" aria-describedby="helpId" value="{{ (old('thumb', $comic->title)) }}">
             <small id="helpId" class="form-text text-muted">max 250 charatteri</small>
             @error('name')
             <div class="alert alert-danger" role="alert">
@@ -81,7 +82,7 @@ CREATE NEW COMICS
 
         <div class="row">
             <div class="col">
-                <button type="submit" class="btn btn-success m-1">EDIT COMIC</button>
+                <button type="submit" class="btn btn-success m-1">MODIFICA COMIC</button>
                 <a name="" id="" class="btn btn-danger" href="{{Route('comics.index')}}" role="button">ANNULLA</a>
             </div>
         </div>

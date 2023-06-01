@@ -7,12 +7,12 @@ COMIX
 @section('content')
 <div class=" container-xl">
     @if (session('message'))
-    <div class="alert alert-success" role="alert">
+    <div class="alert alert-success my-2" role="alert">
         <strong>{{ session('message') }}</strong>
     </div>
     @endif
 
-    <a class="btn btn-primary" href="{{ route('comics.create') }}" role="button">New</a>
+    <a class="btn btn-primary my-3" href="{{ route('comics.create') }}" role="button">New Comic</a>
 
     <div class="table-responsive-xxl">
         <table class="table table-hover table-bordered table-dark ">
@@ -43,33 +43,33 @@ COMIX
                         <div class="row row-cols-3">
 
                             <div class="icon d-inline">
-                                <a name="" id="" class="btn btn-primary w-1rem" href="{{ Route('comics.show', $comic->id) }}" role="button"><i class="fas fa-eye fa-sm fa-fw"></i></a>
+                                <a name="" id="" class="bg-violet-500 btn btn-primary w-1rem" href="{{ Route('comics.show', $comic->id) }}" role="button"><i class="fas fa-eye fa-sm fa-fw"></i></a>
                             </div>
 
                             <div class="icon d-inline">
-                                <a name="" id="" class="btn btn-primary w-1rem" href="{{ Route('comics.edit', $comic->id) }}" role="button"><i class="fas fa-pencil fa-sm fa-fw"></i></a>
+                                <a name="" id="" class="bg-violet-500 btn btn-primary w-1rem" href="{{ Route('comics.edit', $comic->id) }}" role="button"><i class="fas fa-pencil fa-sm fa-fw"></i></a>
                             </div>
 
                             <div class="icon d-inline">
                                 <!-- Modal trigger button -->
-                                <button type="button" class="btn btn-danger btn-lg ratio-1x1 w-1rem p-0" data-bs-toggle="modal" data-bs-target="#modal-{{ $comic->id }}">
+                                <button type="button" class="bg-violet-500 btn btn-danger btn-lg ratio-1x1 w-1rem p-0" data-bs-toggle="modal" data-bs-target="#modal-{{ $comic->id }}">
                                     <i class="fas fa-trash fa-sm fa-fw w-50"></i>
                                 </button>
                                 <!-- Modal Body -->
                                 <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
                                 <div class="modal fade" id="modal-{{ $comic->id }}" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modal-{{ $comic->id }}" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm " role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="modal-{{ $comic->id }}">DELATE
+                                                <h5 class="modal-title text-dark text-bg-danger" id="modal-{{ $comic->id }}">
                                                     {{ $comic->title }}</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
-                                            <div class="modal-body">
+                                            <div class="modal-body text-danger">
                                                 Are you sure you want delete this element?
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-secondary bg-violet-500" data-bs-dismiss="modal">Close</button>
                                                 <form action="{{ route('comics.destroy', $comic->id) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
