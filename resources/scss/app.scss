@@ -1,7 +1,6 @@
 @use '/resources/scss/partials/variables' as *;
 @import '~bootstrap/scss/bootstrap';
 
-
 body {
 
     .jambotron {
@@ -14,6 +13,13 @@ body {
         }
     }
     
+    .w-1rem{
+        width: 3rem;
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .container-comic {
         background-color: #1c1c1c!important;
         
