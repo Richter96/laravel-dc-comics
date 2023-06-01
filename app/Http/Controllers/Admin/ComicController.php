@@ -41,14 +41,9 @@ class ComicController extends Controller
      */
     public function store(StoreComicRequest $request)
     {
-        $val_data = $request->validate([
-            'title' => 'required|min:5|max:100',
-            'type' => 'nullable|min:5|max:50',
-            'description' => 'nullable',
-            'thumb' => 'required|nullable|min:5',
-            'price' => 'required|numeric',
-            'sale_date' => 'nullable'
-        ]);
+
+
+        $val_data = $request->validated();
         // dd($val_data);
 
         // dd($request->all());
@@ -99,14 +94,7 @@ class ComicController extends Controller
     public function update(UpdateComicRequest $request, Comic $comic)
     {
 
-        $val_data = $request->validate([
-            'title' => 'required|min:5|max:100',
-            'type' => 'nullable|min:5|max:50',
-            'description' => 'nullable',
-            'thumb' => 'required|nullable|min:5',
-            'price' => 'required|numeric',
-            'sale_date' => 'nullable'
-        ]);
+        $val_data = $request->validated();
         //dd($val_data);
 
         // $dataForm = [
