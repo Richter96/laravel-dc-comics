@@ -16,6 +16,21 @@ class StoreComicRequest extends FormRequest
         return true;
     }
 
+    public function messages()
+    {
+        return [
+            'title.required' => 'E` obbligatorio inserire un titolo',
+            'title.min' => 'La lunghezza del titolo deve essere maggiore di 5 caratteri',
+            'title.max' => 'La lunghezza del titolo deve essere minore di 100 caratteri',
+            'type.min' => 'La lunghezza del tipo deve essere maggiore di 5 caratteri',
+            'type.max' => 'La lunghezza del Tipo deve essere minore di 50 caratteri',
+            'thumb.min' => 'La lunghezza del link immagine deve essere maggiore di 5 caratteri',
+            'thumb.required' => 'E` obbligatorio inserire un link per l`immagine',
+
+
+        ];
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *
