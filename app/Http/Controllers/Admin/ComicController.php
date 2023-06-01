@@ -46,7 +46,7 @@ class ComicController extends Controller
             'type' => 'nullable|min:5|max:50',
             'description' => 'nullable',
             'thumb' => 'required|nullable|min:5',
-            'price' => 'required',
+            'price' => 'required|numeric',
             'sale_date' => 'nullable'
         ]);
         dd($val_data);
