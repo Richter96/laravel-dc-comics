@@ -79,6 +79,7 @@ CREATE NEW COMICS
             <div class="col">
                 <button type="submit" class="btn btn-success m-1">UPLOAD</button>
                 <button type="reset" class="btn btn-danger">Reset</button>
+                <a name="" id="" class="btn btn-danger" href="{{Route('comics.index')}}" role="button">ANNULLA</a>
             </div>
         </div>
 
