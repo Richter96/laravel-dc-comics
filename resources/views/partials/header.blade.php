@@ -22,8 +22,8 @@
                 aria-current="page">FANS</a>
             <a class="nav-link {{ Route::currentRouteName() === '#' ? 'active' : '' }}" href="#"
                 aria-current="page">NEWS</a>
-            <a class="nav-link {{ Route::currentRouteName() === '#' ? 'active' : '' }}" href="#"
-                aria-current="page">SHOP</a>
+            <a class="nav-link {{ Route::currentRouteName() === 'admin' ? 'active' : '' }}"
+                href="{{ route('comics.index') }}" aria-current="page">ADMIN</a>
         </nav>
     </div>
 </header>
